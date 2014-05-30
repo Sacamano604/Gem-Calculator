@@ -30,17 +30,16 @@
     </div>
 
     <p>The calculator will require you to enter in the required amount of any given gem, and it will return to you how many Marquise Gems, Gold, and Death's Breath you will need.</p>
-   
-    <table class="table">
+   <table class="table">
       <tr>
         <th>Quantity</th>
-        <th>Gem Type (NO FUNCTION YET)</th>
+        <th>Gem Type</th>
         <th>Cut Type</th>
       </tr>
       <form>
       <tr>
         <td><input type="text" name="quantity" size="5" id="quantity" /></td>
-        <td><select>
+        <td><select id="gemKind">
               <option value="">Please choose a gem type...</option>
               <option value="Amethyst" name="Amethyst">Amethyst</option>
               <option value="Diamond" name="Diamond">Diamond</option>
@@ -55,7 +54,7 @@
               <option value="royal" name="royal">Royal</option>
               <option value="flawlessroyal" name="flawlessroyal">Flawless Royal</option>
             </select></td>
-        <td><button type="submit" class="btn btn-primary" id="submitButton" onclick="impEmeraldCalc(document.getElementById('quantity').value, document.getElementById('type').value); return false;">Submit</button></td>
+        <td><button type="submit" class="btn btn-primary" id="submitButton" onclick="impEmeraldCalc(document.getElementById('quantity').value, document.getElementById('gemKind').value, document.getElementById('type').value); return false;">Submit</button></td>
         <td><button class="btn btn-danger" type="reset">Reset</button></td>
       </tr>
     </form>
