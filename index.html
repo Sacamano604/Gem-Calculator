@@ -14,6 +14,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Custom styles, will move to seperate style sheet in due time -->
+    <style type="text/css">
+      #error {
+        color: red;
+      }
+
+    </style>
+    <!-- End of Custom Styles -->
   </head>
   <body>
     <div class="container">
@@ -21,19 +29,24 @@
       <h1>D3:RoS Gem calculator beta</h1>
     </div>
 
-    <h4>Please select the quantity and gem type:</h4>
+    <p>The calculator will require you to enter in the required amount of any given gem, and it will return to you how many Marquise Gems, Gold, and Death's Breath you will need.</p>
    
-    <table width="700">
+    <table class="table">
       <tr>
         <th>Quantity</th>
         <th>Gem Type (NO FUNCTION YET)</th>
-        <th>Cut Type (NO FUNCTION YET)</th>
+        <th>Cut Type</th>
       </tr>
+      <form>
       <tr>
         <td><input type="text" name="quantity" size="5" id="quantity" /></td>
         <td><select>
               <option value="">Please choose a gem type...</option>
-              <option value="emerald" name="emerald">Emerald</option>
+              <option value="Amethyst" name="Amethyst">Amethyst</option>
+              <option value="Diamond" name="Diamond">Diamond</option>
+              <option value="Emerald" name="Emerald">Emerald</option>
+              <option value="Ruby" name="Ruby">Ruby</option>
+              <option value="Topaz" name="Topaz">Topaz</option>
             </select></td>
         <td><select id ="type">
               <option value="">Please choose a cut type...</option>
@@ -42,8 +55,10 @@
               <option value="royal" name="royal">Royal</option>
               <option value="flawlessroyal" name="flawlessroyal">Flawless Royal</option>
             </select></td>
-        <td><button type="submit" class="btn btn-default" id="submitButton" onclick="impEmeraldCalc(document.getElementById('quantity').value, document.getElementById('type').value)">Submit</button></td>
+        <td><button type="submit" class="btn btn-primary" id="submitButton" onclick="impEmeraldCalc(document.getElementById('quantity').value, document.getElementById('type').value); return false;">Submit</button></td>
+        <td><button class="btn btn-danger" type="reset">Reset</button></td>
       </tr>
+    </form>
     </table>
 
     <div id="results">
@@ -51,6 +66,8 @@
 
 
     </div>
+
+
 
 
 
