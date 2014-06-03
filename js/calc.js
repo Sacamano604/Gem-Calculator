@@ -1,27 +1,32 @@
 var gemCalculator = function(quantity, gemType){
+	// Checks to make sure if the quantity entered is a number or not.
 	if (isNaN(quantity)){
 		document.getElementById('errorMessage').innerHTML = "<p id='error'>Please enter a valid number</p>";
 	} else {
+
+	function imperialCalc(quantity){
+		var impQuantity = quantity * 3;
+		document.getElementById("imperialOutput").className = "";
+		document.getElementById('imperialResults').innerHTML = impQuantity;
+	}
+	function flawlessImperialCalc(quantity){
+		var flawImpQuantity = imperialCalc(quantity) * 3;
+		document.getElementById("flawlessImperialOutput").className = "";
+		document.getElementById('flawlessImperialResults').innerHTML = flawImpQuantity;
+	}
+
+
+
 	switch (gemType){
 		case "imperial":
-		document.getElementById("imperialOutput").className = "";
-		document.getElementById('imperialResults').innerHTML = quantity * 3;
-		document.getElementById('imperialGoldAmount').innerHTML = quantity * 200000;
+		imperialCalc(quantity);
 		break;
 
 		case "flawlessimperial":
-		document.getElementById("flawlessImperialOutput").className = "";
-		document.getElementById('flawlessImperialResults').innerHTML = quantity * 9;
-		document.getElementById('flawlessImperialGoldAmount').innerHTML = quantity * 200000;
+		imperialCalc(quantity);
+		flawlessImperialCalc(quantity);
 		break;
 
-		case "royal":
-		document.getElementById('results').innerHTML = quantity * 27;
-		break;
-
-		case "flawlessroyal":
-		document.getElementById('results').innerHTML = quantity * 81;
-		break;
 		//Default not nessecary being that the values are choosen from a drop down 
 		default:
 		document.getElementById('errorMessage').innerHTML = "<p id='error'>You have not choosen a valid gemtype</p>";
