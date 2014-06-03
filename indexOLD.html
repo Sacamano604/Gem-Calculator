@@ -19,9 +19,7 @@
       #error {
         color: red;
       }
-      .hidden {
-        display: none;
-      }
+
     </style>
     <!-- End of Custom Styles -->
   </head>
@@ -49,24 +47,26 @@
               <option value="Ruby" name="Ruby">Ruby</option>
               <option value="Topaz" name="Topaz">Topaz</option>
             </select></td>
-        <td><select id ="gemType">
+        <td><select id ="type">
               <option value="">Please choose a cut type...</option>
               <option value="imperial" name="imperial">Imperial</option>
               <option value="flawlessimperial" name="flawlessimperial">Flawless Imperial</option>
               <option value="royal" name="royal">Royal</option>
               <option value="flawlessroyal" name="flawlessroyal">Flawless Royal</option>
             </select></td>
-        <td><button type="submit" class="btn btn-primary" id="submitButton" onclick="gemCalculator(document.getElementById('quantity').value, document.getElementById('gemType').value); return false;">Submit</button></td>
+        <td><button type="submit" class="btn btn-primary" id="submitButton" onclick="impEmeraldCalc(document.getElementById('quantity').value, document.getElementById('gemKind').value, document.getElementById('type').value); return false;">Submit</button></td>
         <td><button class="btn btn-danger" type="reset">Reset</button></td>
       </tr>
     </form>
     </table>
 
-    <div class="container">
-      <p id="errorMessage"></p>
-      <p id="imperialOutput" class="hidden">You will need <span id="imperialResults"></span> Marquise Gems, and <span id="imperialGoldAmount"></span> gold.</p>
-      <p id="flawlessImperialOutput" class="hidden">You will need <span id="flawlessImperialResults"></span> Marquise Gems, and <span id="flawlessImperialGoldAmount"></span> gold.</p>
-    </div>
+    <div id="initialRequest"></div>
+    <div id="results"></div>
+
+
+
+
+
 
 
 
