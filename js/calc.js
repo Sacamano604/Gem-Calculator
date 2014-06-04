@@ -7,28 +7,27 @@ var gemCalculator = function(quantity, gemType, gemKind){
 	document.getElementById('selectionOutput').innerHTML = "<h4 id='warning'>To create " + quantity + " " + gemType + " " + gemKind + " you will need:</h4>";
 	
 	function imperialCalc(quantity){
-		var impQuantity = quantity * 3;
+		var gemsNeeded = quantity * 3;
 		document.getElementById("imperialOutput").className = "";
-		document.getElementById('imperialResults').innerHTML = impQuantity;
-		return impQuantity;
+		document.getElementById('imperialResults').innerHTML = gemsNeeded;
 	}
 	function flawlessImperialCalc(quantity){
-		var flawImpQuantity = imperialCalc(quantity) * 3;
+		var gemsNeeded = quantity * 3;
+		imperialCalc(gemsNeeded);
 		document.getElementById("flawlessImperialOutput").className = "";
-		document.getElementById('flawlessImperialResults').innerHTML = flawImpQuantity;
-		return flawImpQuantity;
+		document.getElementById('flawlessImperialResults').innerHTML = gemsNeeded;
 	}
 	function royalCalc(quantity){
-		var royalQuantity = flawlessImperialCalc(quantity) * 3;
+		var gemsNeeded = quantity * 3;
+		flawlessImperialCalc(gemsNeeded);
 		document.getElementById("royalOutput").className = "";
-		document.getElementById('royalResults').innerHTML = royalQuantity;
-		return royalQuantity;
+		document.getElementById('royalResults').innerHTML = gemsNeeded;
 	}
 	function flawlessRoyalCalc(quantity){
-		var flawlessRoyalQuantity = royalCalc(quantity) * 3;
+		var gemsNeeded = quantity * 3;
+		royalCalc(gemsNeeded);
 		document.getElementById("flawlessRoyalOutput").className = "";
-		document.getElementById('flawlessRoyalResults').innerHTML = flawlessRoyalQuantity;
-		return flawlessRoyalQuantity;
+		document.getElementById('flawlessRoyalResults').innerHTML = gemsNeeded;
 	}
 
 	switch (gemType){
