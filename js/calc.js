@@ -3,9 +3,9 @@ var gemCalculator = function(quantity, gemType, gemKind){
 	if (isNaN(quantity)){
 		document.getElementById('errorMessage').innerHTML = "<p id='error'>Please enter a valid number</p>";
 	} else {
-
+	//Outputs user's selction
 	document.getElementById('selectionOutput').innerHTML = "<h4 id='warning'>To create " + quantity + " " + gemType + " " + gemKind + " you will need:</h4>";
-	
+	//function that take care of the math. Passing the required number of gems to the next object.
 	function imperialCalc(quantity){
 		var gemsNeeded = quantity * 3;
 		document.getElementById("imperialOutput").className = "";
@@ -29,21 +29,21 @@ var gemCalculator = function(quantity, gemType, gemKind){
 		document.getElementById("flawlessRoyalOutput").className = "";
 		document.getElementById('flawlessRoyalResults').innerHTML = gemsNeeded;
 	}
-
+	//switch to control/call each object/function.
 	switch (gemType){
-		case "imperial":
+		case "Imperial":
 		imperialCalc(quantity);
 		break;
 
-		case "flawlessimperial":
+		case "Flawless Imperial":
 		flawlessImperialCalc(quantity);
 		break;
 		
-		case "royal":
+		case "Royal":
 		royalCalc(quantity);
 		break;
 		
-		case "flawlessroyal":
+		case "Flawless Royal":
 		flawlessRoyalCalc(quantity);
 		break;
 		//Default not nessecary being that the values are choosen from a drop down 
