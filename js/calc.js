@@ -4,7 +4,7 @@ var gemCalculator = function(quantity, gemType, gemKind){
 		document.getElementById('errorMessage').innerHTML = "<p id='error'>Please enter a valid number</p>";
 	} else {
 	//Outputs user's selction
-	document.getElementById('selectionOutput').innerHTML = "<h4 id='warning'>To create " + quantity + " " + gemType + " " + gemKind + " you will need:</h4>";
+	document.getElementById('selectionOutput').innerHTML = "<h3 id='warning'>To create " + quantity + " " + gemType + " " + gemKind + ":</h3>";
 	//function that take care of the math. Passing the required number of gems to the next object.
 	function imperialCalc(quantity){
 		var gemsNeeded = quantity * 3;

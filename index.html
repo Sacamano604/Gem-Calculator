@@ -15,6 +15,12 @@
     <![endif]-->
     <!-- Custom styles, will move to seperate style sheet in due time -->
     <style type="text/css">
+      .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+        border-color: white;
+      }
+      h4 {
+        line-height: 1.5em;
+      }
       #error {
         color: #FF0000;
       }
@@ -32,10 +38,9 @@
   <body>
     <div class="container">
     <div class="page-header">
-      <h1>D3:RoS Gem calculator beta</h1>
+      <h1>Diablo 3:RoS Gem calculator</h1>
+      <p>The calculator will require you to enter in the required amount of any given gem, and it will return to you how many of each gem type you will need.</p>
     </div>
-
-    <p>The calculator will require you to enter in the required amount of any given gem, and it will return to you how many of each gem type you will need.</p>
    <table class="table">
       <tr>
         <th>Quantity</th>
@@ -44,15 +49,15 @@
       </tr>
       <form>
       <tr>
-        <td><input type="text" name="quantity" size="5" id="quantity" /></td>
-        <td><select id ="gemType">
+        <td><input type="text" name="quantity" size="5" id="quantity" class="form-control" /></td>
+        <td><select id ="gemType" class="form-control">
               <option value="">Please choose a cut type...</option>
               <option value="Imperial" name="Imperial">Imperial</option>
               <option value="Flawless Imperial" name="Flawless Imperial">Flawless Imperial</option>
               <option value="Royal" name="Royal">Royal</option>
               <option value="Flawless Royal" name="Flawless royal">Flawless Royal</option>
             </select></td>
-            <td><select id="gemKind">
+            <td><select id="gemKind" class="form-control">
               <option value="">Please choose a gem type...</option>
               <option value="Amethyst" name="Amethyst">Amethyst</option>
               <option value="Diamond" name="Diamond">Diamond</option>
@@ -69,15 +74,11 @@
     <div class="container">
       <div id="errorMessage"></div>
       <div id="selectionOutput"></div>
- 
-      <p id="imperialOutput" class="hidden">You will need <span id="imperialResults"></span> Marquise Gems.</p>
-      <p id="flawlessImperialOutput" class="hidden">You will need <span id="flawlessImperialResults"></span> Imperial Gems.</p>
-      <p id="royalOutput" class="hidden">You will need <span id="royalResults"></span> Flawless Imperial Gems.</p>
-      <p id="flawlessRoyalOutput" class="hidden">You will need <span id="flawlessRoyalResults"></span> Royal Gems.</p>
+      <h4 id="imperialOutput" class="hidden">You will need <span id="imperialResults"></span> Marquise Gems.</h4>
+      <h4 id="flawlessImperialOutput" class="hidden">You will need <span id="flawlessImperialResults"></span> Imperial Gems.</h4>
+      <h4 id="royalOutput" class="hidden">You will need <span id="royalResults"></span> Flawless Imperial Gems.</h4>
+      <h4 id="flawlessRoyalOutput" class="hidden">You will need <span id="flawlessRoyalResults"></span> Royal Gems.</h4>
     </div>
-
-
-
 
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

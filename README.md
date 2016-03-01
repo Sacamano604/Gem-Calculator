@@ -10,3 +10,5 @@ June 3rd: Calculator is working fine, but needing to clean code and change the i
 June 3rd: Completed move from if/else to switch.
 
 June 4th: Working version can be found at http://bentoussi.com/gems/
+
+Feb 29th, 2016: Code clean up. Uploaded new working version, spacing, etc should be good now.
